@@ -1,0 +1,43 @@
+﻿@using RigetZOO.Models
+@page "/Register"
+@rendermode InteractiveServer
+<h3>Register</h3>
+<div>
+    <label> Username </label> <input @bind-value=customer.Username/>
+</div>
+<br/>
+
+<div>
+    <label> Password </label> <input type="password" @bind-value=customer.Password />  
+</div>
+<br/>
+
+<div>
+    <label> First name </label> <input @bind-value=customer.FirstName/>
+</div>
+<br/>
+
+<div>
+    <label> Last name </label><input @bind-value=customer.LastName />
+</div>
+<br/>
+
+<div>
+    <button @onclick=testButton> Register </button>
+</div>
+
+
+
+@code {
+    private Customer customer = new Customer();
+
+    private async Task testButton()
+    {
+
+        Console.WriteLine(customer.Username);
+        Console.WriteLine(customer.FirstName);
+        Console.WriteLine(customer.LastName);
+        Console.WriteLine(customer.Password);
+
+    }
+}
